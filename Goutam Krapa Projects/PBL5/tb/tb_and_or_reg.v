@@ -9,14 +9,13 @@ module tb_and_or_reg();
   wire f;                 
   
   // Instantiate the design under test (DUT)
-  and_or_reg uut (
-    .a(a),
-    .b(b),
-    .c(c),
-    .d(d),
-    .clk(clk),
-    .rst(rst),
-    .f(f)
+  and_or_reg uut (	.clk(clk),
+					.rst(rst),
+					.a(a),
+					.b(b),
+					.c(c),
+					.d(d),
+					.f(f)
   );
 
   // Clock generation: toggle every 5 time units

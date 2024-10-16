@@ -6,18 +6,16 @@ input b,
 input c,
 input d,
 output reg f
-  //input wire a, b, c, d,    // Inputs a, b, c, d
-  //input wire clk,           // Clock signal
-  //input wire rst,           // Reset signal
-  //output reg f              // Output f (registered output)
+//if wire or reg not mentioned its default as wire 
 );
 
-  // Internal signal to hold the combinational logic result
-  //wire e;
-// or wire e = (a & b) | (c & d);
+// Internal signal to hold the combinational logic result
+// Combinational logic: AND and OR gates
 wire e = (a & b) | (c & d);
-  // Combinational logic: AND and OR gates
-  //assign e = (a & b) | (c & d);
+//OR
+//wire e;
+//wire e = (a & b) | (c & d);
+//assign e = (a & b) | (c & d);
 
   // Sequential logic: Register with asynchronous reset
   //always @(posedge clk or negedge rst) begin

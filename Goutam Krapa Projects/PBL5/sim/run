@@ -1,6 +1,6 @@
 #!/bin/csh -f
 ################################################################################
-# simulation top script
+# simulation top script by Goutam Krapa 2215855
 # change modelsim in this file dir and run "do this_file.do"
 # project dir ---+---> hdl source dir
 #                +---> sim script dir
