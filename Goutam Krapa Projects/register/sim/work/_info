@@ -1,0 +1,99 @@
+m255
+K4
+z2
+!s11f vlog 2021.1 2021.02, Feb  3 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Mirror/Teaching/CENG5931/ICDesign_FA2023/and_or_tri/sim
+vand_or_tri
+Z1 !s110 1697678259
+!i10b 1
+!s100 Q@JQViJcb8I_Ga[S>PSD73
+IKj7CYD>f5VzE>BTB8WMce1
+R0
+w1697677244
+8../dut/and_or_tri.v
+F../dut/and_or_tri.v
+!i122 0
+L0 1 12
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 OV;L;2021.1;73
+r1
+!s85 0
+31
+Z4 !s108 1697678259.000000
+Z5 !s107 ../tb/and_or_tri_tb.v|
+Z6 !s90 -reportprogress|300|-v|../dut/and_or_tri.v|../tb/and_or_tri_tb.v|
+!i113 1
+Z7 !s92 -v ../dut/and_or_tri.v
+Z8 tCvgOpt 0
+vand_or_tri_tb
+R1
+!i10b 1
+!s100 1M30`7X4Bae8U?H0@;g_T0
+IFIbncFoC1M3o7AIYj0El90
+R0
+w1697678163
+8../tb/and_or_tri_tb.v
+F../tb/and_or_tri_tb.v
+!i122 0
+L0 1 28
+R2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+R8
+vregister
+Z9 !s110 1697681542
+!i10b 1
+!s100 __<R09[ZQb[ZTzPHdD3RX2
+I3:VcYdMcG_Q@c=dN3do<X1
+Z10 dC:/Mirror/Teaching/CENG5931/ICDesign_FA2023/register/sim
+w1697681135
+8../dut/register.v
+F../dut/register.v
+!i122 4
+L0 1 13
+R2
+R3
+r1
+!s85 0
+31
+Z11 !s108 1697681542.000000
+!s107 ../tb/register_tb.v|
+Z12 !s90 -reportprogress|300|-v|../dut/register.v|../tb/register_tb.v|
+!i113 1
+Z13 !s92 -v ../dut/register.v
+R8
+vregister_tb
+R9
+!i10b 1
+!s100 41HjA0nCk5o=1_c31g42n2
+I=>o>Z2EEK8fI[`gBlkX:l0
+R10
+w1697681538
+8../tb/register_tb.v
+F../tb/register_tb.v
+!i122 4
+L0 1 41
+R2
+R3
+r1
+!s85 0
+31
+R11
+Z14 !s107 ../tb/register_tb.v|
+R12
+!i113 1
+R13
+R8

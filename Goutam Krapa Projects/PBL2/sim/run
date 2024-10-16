@@ -1,0 +1,48 @@
+#!/bin/csh -f
+################################################################################
+# simulation top script
+# change modelsim in this file dir and run "do this_file.do"
+# project dir ---+---> hdl source dir
+#                +---> sim script dir
+#
+################################################################################
+
+# check if current dir has modelsim config file
+set has_config  [file exists modelsim.do]
+# config modelsim 
+if {$has_config==1} { do modelsim.do  ; }
+
+echo "+====================================="
+echo "| Creat Lib Work soc                  "
+echo "+====================================="
+vlib work
+vmap work work 
+
+echo "+====================================="
+echo "| Complile RTL Code of soc            "
+echo "+====================================="
+
+vlog -f ../filelist/filelist.f  
+##or##vlog -v ../dut/and_or.v ../tb/tb_and_mux.v
+
+echo "+====================================="
+echo "| Compiler Pass                       "
+echo "| Being to Run Simulation             "
+echo "+====================================="
+vsim work.tb_and_mux -t 1ns
+
+################## #################### mus  ####################################
+add wave -noupdate -format logic -radix hexadecimal tb_and_mux/a
+add wave -noupdate -format logic -radix hexadecimal tb_and_mux/b
+add wave -noupdate -format logic -radix hexadecimal tb_and_mux/c
+add wave -noupdate -format logic -radix hexadecimal tb_and_mux/d
+add wave -noupdate -format logic -radix hexadecimal tb_and_mux/sel
+add wave -noupdate -format logic -radix hexadecimal tb_and_mux/e
+
+
+add wave -noupdate -format logic -radix hexadecimal -color blue tb_and_mux/u_and_mux/a
+add wave -noupdate -format logic -radix hexadecimal -color blue tb_and_mux/u_and_mux/b
+add wave -noupdate -format logic -radix hexadecimal -color blue tb_and_mux/u_and_mux/c
+add wave -noupdate -format logic -radix hexadecimal -color blue tb_and_mux/u_and_mux/d
+add wave -noupdate -format logic -radix hexadecimal -color blue tb_and_mux/u_and_mux/e
+run 200ns                                                                            

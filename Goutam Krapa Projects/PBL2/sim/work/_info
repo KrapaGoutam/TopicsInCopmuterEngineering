@@ -1,0 +1,74 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/krapa/Documents/UHCLmasters/CENG/Topics in CEng/Goutam Krapa Projects/PBL2/sim
+vand_mux
+Z1 !s110 1728956731
+!i10b 1
+!s100 @SFWjQ`=W2;;I4U:]Qjo:0
+I^R1hUoRJic1k6I76z=EWo0
+R0
+w1728956434
+Z2 8../dut/and_mux.v
+Z3 F../dut/and_mux.v
+!i122 5
+Z4 L0 1 18
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OV;L;2021.1;73
+r1
+!s85 0
+31
+Z7 !s108 1728956731.000000
+Z8 !s107 ../tb/tb_and_mux.v|../dut/and_mux.v|
+Z9 !s90 -reportprogress|300|-f|../filelist/filelist.f|
+!i113 1
+Z10 tCvgOpt 0
+vand_or
+!s110 1728956400
+!i10b 1
+!s100 8BX3XkoG;Y5V=@b0;g<9=0
+ITI3E]jNU6M>f;Z]]=cLAX0
+R0
+w1728956054
+R2
+R3
+!i122 1
+R4
+R5
+R6
+r1
+!s85 0
+31
+!s108 1728956400.000000
+R8
+R9
+!i113 1
+R10
+vtb_and_mux
+R1
+!i10b 1
+!s100 l[aVm]OMIjQdik:cPn9Nh0
+I?7IEH89hF_;AEG=HE:YY31
+R0
+w1728956395
+8../tb/tb_and_mux.v
+F../tb/tb_and_mux.v
+!i122 5
+L0 1 30
+R5
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
