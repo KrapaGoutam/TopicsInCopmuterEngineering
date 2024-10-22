@@ -24,7 +24,8 @@ module tb_counter_0_to_9();
         // Initial state
 		rst=1'b0; clk=1'b0;
         #10 rst=1'b1;
-		@(posedge clk) en=1'b1;
+		#10 en=1'b1;
+		//@(posedge clk) en=1'b1;
 
         // uncomment if you want to Finish the simulation
         //$finish;

@@ -10,22 +10,22 @@ z2
 cModel Technology
 Z0 dC:/Users/krapa/Documents/UHCLmasters/CENG/Topics in CEng/IC-Design/Goutam Krapa Projects/PBL13/sim
 vcounter_0_to_9
-Z1 !s110 1729562214
+Z1 !s110 1729562659
 !i10b 1
-!s100 _5bmeFD]Hn_b3_:>fX^VN3
-I6KVR13Dk_nShLAZ:3g4OP0
+!s100 LdYMo5QTN7CnN;RidTz=X2
+IfO1J>3DF?7=E@>HUnZH_A2
 Z2 dC:/Users/krapa/Documents/UHCLmasters/CENG/Topics in CEng/IC-Design/Goutam Krapa Projects/PBL13_Counter0to9/sim
-w1729562053
+w1729562368
 8../dut/counter_0_to_9class.v
 F../dut/counter_0_to_9class.v
-!i122 31
-L0 1 22
+!i122 35
+L0 1 24
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 Z4 OV;L;2021.1;73
 r1
 !s85 0
 31
-Z5 !s108 1729562213.000000
+Z5 !s108 1729562659.000000
 !s107 ../tb/tb_counter_0_to_9class.v|
 Z6 !s90 -reportprogress|300|-v|../dut/counter_0_to_9class.v|../tb/tb_counter_0_to_9class.v|
 !i113 1
@@ -56,14 +56,14 @@ R8
 vtb_counter_0_to_9
 R1
 !i10b 1
-!s100 ^GQ4=8LdG32lb>JT4WhVW1
-IBKM<UYAM60YF`mo7UYdG<3
+!s100 iF?0W]aTkNeGYkF^:mU[C0
+I1I@QebKmKA<T_UP56z2D=1
 R2
-w1729562110
+w1729562652
 8../tb/tb_counter_0_to_9class.v
 F../tb/tb_counter_0_to_9class.v
-!i122 31
-L0 1 39
+!i122 35
+L0 1 40
 R3
 R4
 r1

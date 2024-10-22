@@ -6,8 +6,10 @@ module counter_0_to_9 (
 );
 
 // MUX logic for next counter value
-wire [3:0] inc_cnt = en ? cnt + 4'h1 : cnt; // secondary MUX to increment if en, else hold current value
-wire [3:0] nxt_cnt = (cnt == 4'h9) ? 4'h0 : inc_cnt; // reset counter to 4'h0 if cnt is 4'h9
+    wire [3:0] nxt_cnt = (cnt == 4'h9) ? 4'h0 :  // reset counter to 4'h0 if cnt is 4'h9
+                         (en ? cnt + 4'h1 : cnt);  // secondary MUX to increment if en, else hold current value
+						 
+	//or //wire [3:0] inc_cnt = en ? cnt + 4'h1 : cnt;     wire [3:0] nxt_cnt = (cnt == 4'h9) ? 4'h0 :  inc_cnt;
     
 
     // Counter logic with reset
