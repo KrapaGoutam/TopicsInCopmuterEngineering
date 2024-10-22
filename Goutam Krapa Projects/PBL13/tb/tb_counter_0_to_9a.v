@@ -1,4 +1,4 @@
-module tb_counter_with_vld;
+module tb_counter_0_to_9;
 
     // Inputs
     reg clk;
@@ -10,7 +10,7 @@ module tb_counter_with_vld;
     wire vld;
 
     // Instantiate the counter module
-    counter_with_vld uut (
+    counter_0_to_9 uut (
         .clk(clk),
         .rst(rst),
         .en(en),
@@ -24,39 +24,37 @@ module tb_counter_with_vld;
     // Testbench sequence
     initial begin
         // Initial state
-        clk = 1'b0;      // Initial clock state
-        rst = 1'b1;      // Apply reset
-        en = 1'b0;    // Initially, en signal is low
-        
-        // Wait for 10 ns (half a clock period) to allow reset to propagate
-        #10;
-        
-        // Deassert reset
-        rst = 1'b0;      // Release reset after 10 ns
+        clk = 1'b0;      // Initialize clock
+        rst = 1'b0;      // Start with reset deasserted
+        en = 1'b0;       // Initially, en signal is low
+
+        // Apply reset (active low)
+        //#5 rst = 1'b0;   // Apply reset
+        #30 rst = 1'b1;  // Release reset after 20 ns
 
         // Wait for a clock edge
         @(posedge clk);
-        
+
         // Enable counting
-        en = 1'b1;    // Set en signal to enable counting
+        en = 1'b1;       // Set en signal to enable counting
 
         // Let the counter run for some time (e.g., 200 ns)
         #200;
 
         // Disable counting
-        en = 1'b0;    // Disable counting after 200 ns
+        //en = 1'b0;       // Disable counting after 200 ns
 
         // Wait for a few more clock cycles to observe behavior when en is low
-        #40;
+        //#40;
 
         // Re-enable counting
-        en = 1'b1;    // Re-enable counting
+        //en = 1'b1;       // Re-enable counting
 
         // Let the simulation run for a bit more to observe the full cycle
         #100;
 
         // Finish the simulation
-        $finish;
+        //$finish;
     end
 
     // Monitor signals to observe the behavior

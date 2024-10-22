@@ -10,88 +10,90 @@ z2
 cModel Technology
 Z0 dC:/Users/krapa/Documents/UHCLmasters/CENG/Topics in CEng/IC-Design/Goutam Krapa Projects/PBL13/sim
 vcounter_0_to_9
-Z1 !s110 1729550917
+Z1 !s110 1729553774
 !i10b 1
-!s100 Og]IjRbXG^Q9k7Q_G?kXb3
-IdbNT_<]dCNHI<]WRkJ5I@2
+!s100 HlbSA66J[hXkW32AHznJ42
+Ia[P?0X;d9ocAHAz_=8<if3
 R0
-w1729550368
-8../dut/counter_0_to_9.v
-F../dut/counter_0_to_9.v
-!i122 6
-L0 1 19
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-Z3 OV;L;2021.1;73
+w1729553251
+Z2 8../dut/counter_0_to_9a.v
+Z3 F../dut/counter_0_to_9a.v
+!i122 23
+L0 1 31
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OV;L;2021.1;73
 r1
 !s85 0
 31
-Z4 !s108 1729550917.000000
-Z5 !s107 ../tb/tb_counter_0_to_9.v|../dut/counter_0_to_9.v|
-Z6 !s90 -reportprogress|300|-f|../filelist/filelist.f|
+Z6 !s108 1729553774.000000
+Z7 !s107 ../tb/tb_counter_0_to_9a.v|
+Z8 !s90 -reportprogress|300|-v|../dut/counter_0_to_9a.v|../tb/tb_counter_0_to_9a.v|
 !i113 1
-Z7 tCvgOpt 0
+Z9 !s92 -v ../dut/counter_0_to_9a.v
+Z10 tCvgOpt 0
 vcounter_with_vld
-Z8 !s110 1729552160
+Z11 !s110 1729552544
 !i10b 1
-!s100 c;zF[J94l4eRCOC:z[3dn2
-I<A1JQmML`JbX=eB>GjVfG1
+!s100 STfzDo1fVKk2lbFE?0jD22
+IE3hZO]2F=WD2i[]]BZMZh3
 R0
-w1729552157
-8../dut/counter_0_to_9a.v
-F../dut/counter_0_to_9a.v
-!i122 9
-L0 1 33
+w1729552251
 R2
 R3
+!i122 12
+L0 1 33
+R4
+R5
 r1
 !s85 0
 31
-Z9 !s108 1729552160.000000
-!s107 ../tb/tb_counter_0_to_9a.v|
-Z10 !s90 -reportprogress|300|-v|../dut/counter_0_to_9a.v|../tb/tb_counter_0_to_9a.v|
-!i113 1
-Z11 !s92 -v ../dut/counter_0_to_9a.v
+Z12 !s108 1729552544.000000
 R7
+R8
+!i113 1
+R9
+R10
 vtb_counter_0_to_9
 R1
 !i10b 1
-!s100 S1M5bPL7DMMnB^eVSC7LX3
-I8];hWFWf4Cl6`emSk;7Y?0
+!s100 z]JFh^4hg>d=8RO2h2c<j1
+IfK`GoY99z7DQ=JWGBD=Ed0
 R0
-w1729550913
-8../tb/tb_counter_0_to_9.v
-F../tb/tb_counter_0_to_9.v
-!i122 6
-L0 1 41
-R2
-R3
-r1
-!s85 0
-31
+w1729553765
+Z13 8../tb/tb_counter_0_to_9a.v
+Z14 F../tb/tb_counter_0_to_9a.v
+!i122 23
+L0 1 66
 R4
 R5
-R6
-!i113 1
-R7
-vtb_counter_with_vld
-R8
-!i10b 1
-!s100 [6_RDh`_n`G9jHYkPz4`51
-ITNonaNOa]^^Bc@2:5SOm31
-R0
-w1729551998
-8../tb/tb_counter_0_to_9a.v
-F../tb/tb_counter_0_to_9a.v
-!i122 9
-L0 1 68
-R2
-R3
 r1
 !s85 0
 31
-R9
-Z12 !s107 ../tb/tb_counter_0_to_9a.v|
-R10
-!i113 1
-R11
+R6
 R7
+R8
+!i113 1
+R9
+R10
+vtb_counter_with_vld
+R11
+!i10b 1
+!s100 g66T?8>I:k8zlWcdHak7<1
+ILdAm6a<m`8VRQ]NnSV`io1
+R0
+w1729552421
+R13
+R14
+!i122 12
+L0 1 68
+R4
+R5
+r1
+!s85 0
+31
+R12
+R7
+R8
+!i113 1
+R9
+R10

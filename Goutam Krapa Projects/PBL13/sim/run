@@ -38,12 +38,16 @@ add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/clk
 add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/rst
 add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/en
 add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/cnt
+add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/vld
 
 
 add wave -noupdate -format logic -radix hexadecimal -color blue tb_counter_0_to_9/uut/clk
 add wave -noupdate -format logic -radix hexadecimal -color blue tb_counter_0_to_9/uut/rst
 add wave -noupdate -format logic -radix hexadecimal -color blue tb_counter_0_to_9/uut/en
 add wave -noupdate -format logic -radix hexadecimal -color blue tb_counter_0_to_9/uut/cnt
+add wave -noupdate -format logic -radix hexadecimal -color blue tb_counter_0_to_9/uut/nxt_cnt
+add wave -noupdate -format logic -radix hexadecimal -color blue tb_counter_0_to_9/uut/vld
+##add wave -noupdate -format logic -radix hexadecimal -color blue tb_counter_0_to_9/uut/nxt_vld
 
 
-run 200ns
+run 400ns
