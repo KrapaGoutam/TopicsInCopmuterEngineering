@@ -1,0 +1,99 @@
+m255
+K4
+z2
+!s11f vlog 2021.1 2021.02, Feb  3 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/krapa/Documents/UHCLmasters/CENG/Topics in CEng/IC-Design/Goutam Krapa Projects/PBL13/sim
+vcounter_0_to_9
+Z1 !s110 1729562214
+!i10b 1
+!s100 _5bmeFD]Hn_b3_:>fX^VN3
+I6KVR13Dk_nShLAZ:3g4OP0
+Z2 dC:/Users/krapa/Documents/UHCLmasters/CENG/Topics in CEng/IC-Design/Goutam Krapa Projects/PBL13_Counter0to9/sim
+w1729562053
+8../dut/counter_0_to_9class.v
+F../dut/counter_0_to_9class.v
+!i122 31
+L0 1 22
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 OV;L;2021.1;73
+r1
+!s85 0
+31
+Z5 !s108 1729562213.000000
+!s107 ../tb/tb_counter_0_to_9class.v|
+Z6 !s90 -reportprogress|300|-v|../dut/counter_0_to_9class.v|../tb/tb_counter_0_to_9class.v|
+!i113 1
+Z7 !s92 -v ../dut/counter_0_to_9class.v
+Z8 tCvgOpt 0
+vcounter_with_vld
+Z9 !s110 1729552544
+!i10b 1
+!s100 STfzDo1fVKk2lbFE?0jD22
+IE3hZO]2F=WD2i[]]BZMZh3
+R0
+w1729552251
+8../dut/counter_0_to_9a.v
+F../dut/counter_0_to_9a.v
+!i122 12
+L0 1 33
+R3
+R4
+r1
+!s85 0
+31
+Z10 !s108 1729552544.000000
+Z11 !s107 ../tb/tb_counter_0_to_9a.v|
+Z12 !s90 -reportprogress|300|-v|../dut/counter_0_to_9a.v|../tb/tb_counter_0_to_9a.v|
+!i113 1
+Z13 !s92 -v ../dut/counter_0_to_9a.v
+R8
+vtb_counter_0_to_9
+R1
+!i10b 1
+!s100 ^GQ4=8LdG32lb>JT4WhVW1
+IBKM<UYAM60YF`mo7UYdG<3
+R2
+w1729562110
+8../tb/tb_counter_0_to_9class.v
+F../tb/tb_counter_0_to_9class.v
+!i122 31
+L0 1 39
+R3
+R4
+r1
+!s85 0
+31
+R5
+Z14 !s107 ../tb/tb_counter_0_to_9class.v|
+R6
+!i113 1
+R7
+R8
+vtb_counter_with_vld
+R9
+!i10b 1
+!s100 g66T?8>I:k8zlWcdHak7<1
+ILdAm6a<m`8VRQ]NnSV`io1
+R0
+w1729552421
+8../tb/tb_counter_0_to_9a.v
+F../tb/tb_counter_0_to_9a.v
+!i122 12
+L0 1 68
+R3
+R4
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 1
+R13
+R8

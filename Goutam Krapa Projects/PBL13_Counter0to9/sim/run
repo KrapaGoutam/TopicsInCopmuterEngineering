@@ -1,0 +1,62 @@
+#!/bin/csh -f
+################################################################################
+# simulation top script by Goutam Krapa 2215855
+# change modelsim in this file dir and run "do this_file.do"
+# project dir ---+---> hdl source dir
+#                +---> sim script dir
+#
+################################################################################
+
+# check if current dir has modelsim config file
+set has_config  [file exists modelsim.do]
+# config modelsim 
+if {$has_config==1} { do modelsim.do  ; }
+
+echo "+====================================="
+echo "| Creat Lib Work soc                  "
+echo "+====================================="
+vlib work
+vmap work work 
+
+echo "+====================================="
+echo "| Complile RTL Code of soc            "
+echo "+====================================="
+
+##vlog -f ../filelist/filelist.f  
+vlog -v ../dut/counter_0_to_9a.v ../tb/tb_counter_0_to_9a.v
+##or##vlog -v ../dut/and_or.v ../tb/tb_counter_0_to_9.v
+##vlog -v ../dut/counter_0_to_9.v ../tb/tb_counter_0_to_9.v
+
+echo "+====================================="
+echo "| Compiler Pass                       "
+echo "| Being to Run Simulation             "
+echo "+====================================="
+vsim work.tb_counter_0_to_9 -t 1ns
+
+################## #################### mus  ####################################
+add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/clk
+add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/rst
+add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/en
+add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/cnt
+add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/uut/nxt_cnt
+#add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/vld
+
+
+add wave -noupdate -format logic -radix hexadecimal -color cyan tb_counter_0_to_9/uut/clk
+add wave -noupdate -format logic -radix hexadecimal -color cyan tb_counter_0_to_9/uut/rst
+add wave -noupdate -format logic -radix hexadecimal -color cyan tb_counter_0_to_9/uut/en
+add wave -noupdate -format logic -radix hexadecimal -color cyan tb_counter_0_to_9/uut/cnt
+add wave -noupdate -format logic -radix hexadecimal -color cyan tb_counter_0_to_9/uut/nxt_cnt
+#add wave -noupdate -format logic -radix hexadecimal -color cyan tb_counter_0_to_9/uut/vld
+
+
+run 400ns
+
+##possible colors of waveform black
+#white
+#red
+#green
+#blue
+#yellow
+#cyan
+#magenta

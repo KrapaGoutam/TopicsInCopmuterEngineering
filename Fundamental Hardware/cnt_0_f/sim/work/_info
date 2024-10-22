@@ -1,0 +1,55 @@
+m255
+K4
+z2
+!s11f vlog 2021.1 2021.02, Feb  3 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/krapa/Documents/UHCLmasters/CENG/Topics in CEng/IC-Design/Fundamental Hardware/cnt_0_f/sim
+vcnt_0_f
+Z1 !s110 1729561318
+!i10b 1
+!s100 JBPG6JI:nCV1amf74T]e>2
+IjD8I;PX]@4QP0g[U[N@eM1
+R0
+Z2 w1728346798
+8../dut/cnt_0_f.v
+F../dut/cnt_0_f.v
+!i122 0
+L0 1 15
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 OV;L;2021.1;73
+r1
+!s85 0
+31
+Z5 !s108 1729561318.000000
+!s107 ../tb/cnt_0_f_tb.v|
+Z6 !s90 -reportprogress|300|-v|../dut/cnt_0_f.v|../tb/cnt_0_f_tb.v|
+!i113 1
+Z7 !s92 -v ../dut/cnt_0_f.v
+Z8 tCvgOpt 0
+vcnt_0_f_tb
+R1
+!i10b 1
+!s100 WfK_0aI;hg3:P[jdF[VYL1
+IK_o24djnj:cjGF05TfLmN1
+R0
+R2
+8../tb/cnt_0_f_tb.v
+F../tb/cnt_0_f_tb.v
+!i122 0
+L0 1 30
+R3
+R4
+r1
+!s85 0
+31
+R5
+Z9 !s107 ../tb/cnt_0_f_tb.v|
+R6
+!i113 1
+R7
+R8

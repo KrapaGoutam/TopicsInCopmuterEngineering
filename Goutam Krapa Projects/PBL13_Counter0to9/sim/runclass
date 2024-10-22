@@ -23,7 +23,7 @@ echo "| Complile RTL Code of soc            "
 echo "+====================================="
 
 ##vlog -f ../filelist/filelist.f  
-vlog -v ../dut/counter_0_to_9a.v ../tb/tb_counter_0_to_9a.v
+vlog -v ../dut/counter_0_to_9class.v ../tb/tb_counter_0_to_9class.v
 ##or##vlog -v ../dut/and_or.v ../tb/tb_counter_0_to_9.v
 ##vlog -v ../dut/counter_0_to_9.v ../tb/tb_counter_0_to_9.v
 
@@ -38,16 +38,25 @@ add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/clk
 add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/rst
 add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/en
 add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/cnt
-add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/vld
+add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/u_counter_0_to_9/nxt_cnt
 
 
-add wave -noupdate -format logic -radix hexadecimal -color blue tb_counter_0_to_9/uut/clk
-add wave -noupdate -format logic -radix hexadecimal -color blue tb_counter_0_to_9/uut/rst
-add wave -noupdate -format logic -radix hexadecimal -color blue tb_counter_0_to_9/uut/en
-add wave -noupdate -format logic -radix hexadecimal -color blue tb_counter_0_to_9/uut/cnt
-add wave -noupdate -format logic -radix hexadecimal -color blue tb_counter_0_to_9/uut/nxt_cnt
-add wave -noupdate -format logic -radix hexadecimal -color blue tb_counter_0_to_9/uut/vld
-##add wave -noupdate -format logic -radix hexadecimal -color blue tb_counter_0_to_9/uut/nxt_vld
+
+add wave -noupdate -format logic -radix hexadecimal -color cyan tb_counter_0_to_9/u_counter_0_to_9/clk
+add wave -noupdate -format logic -radix hexadecimal -color cyan tb_counter_0_to_9/u_counter_0_to_9/rst
+add wave -noupdate -format logic -radix hexadecimal -color cyan tb_counter_0_to_9/u_counter_0_to_9/en
+add wave -noupdate -format logic -radix hexadecimal -color cyan tb_counter_0_to_9/u_counter_0_to_9/cnt
+add wave -noupdate -format logic -radix hexadecimal -color cyan tb_counter_0_to_9/u_counter_0_to_9/nxt_cnt
+
 
 
 run 400ns
+
+##possible colors of waveform black
+#white
+#red
+#green
+#blue
+#yellow
+#cyan
+#magenta
