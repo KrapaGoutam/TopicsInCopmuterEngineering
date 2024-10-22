@@ -26,5 +26,20 @@ initial begin
   repeat(5)  @(negedge clk);
   rst=1;
 end
+//or//in class test bench
+/* initial begin
+        // Initial state
+		rst=1'b0; clk=1'b0; en=1'b0;
+        #10 rst=1'b1;
+		@(posedge clk) en=1'b1;
+		#100 rst=1'b0;//reset within counting
+		#30 rst=1'b1;
+		repeat(15) @(posedge clk) en=1'b0;
+		repeat(10) @(posedge clk) en=1'b1;
+		
+
+        // uncomment if you want to Finish the simulation
+        //$finish;
+    end */
 
 endmodule

@@ -38,7 +38,7 @@ add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/clk
 add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/rst
 add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/en
 add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/cnt
-add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/u_counter_0_to_9/nxt_cnt
+add wave -noupdate -format logic -radix hexadecimal -color magenta tb_counter_0_to_9/u_counter_0_to_9/nxt_cnt
 
 
 
@@ -50,7 +50,7 @@ add wave -noupdate -format logic -radix hexadecimal -color cyan tb_counter_0_to_
 
 
 
-run 400ns
+run 600ns
 
 ##possible colors of waveform black
 #white
