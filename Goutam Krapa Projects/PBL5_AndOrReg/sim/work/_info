@@ -10,22 +10,22 @@ z2
 cModel Technology
 dC:/Users/krapa/Documents/UHCLmasters/CENG/Topics in CEng/Goutam Krapa Projects/PBL5/sim
 vand_or_reg
-Z0 !s110 1729040227
+Z0 !s110 1729573527
 !i10b 1
 !s100 OTgbhjZ@boCQ]VNkSY2Re2
 I9oSjI@:oAYB]AL];KL3Y30
-Z1 dC:/Users/krapa/Documents/UHCLmasters/CENG/Topics in CEng/IC-Design/Goutam Krapa Projects/PBL5/sim
+Z1 dC:/Users/krapa/Documents/UHCLmasters/CENG/Topics in CEng/IC-Design/Goutam Krapa Projects/PBL5_AndOrReg/sim
 w1729039410
 8../dut/and_or_reg.v
 F../dut/and_or_reg.v
-!i122 4
+!i122 5
 L0 1 31
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 Z3 OV;L;2021.1;73
 r1
 !s85 0
 31
-Z4 !s108 1729040227.000000
+Z4 !s108 1729573526.000000
 !s107 ../tb/tb_and_or_reg.v|../dut/and_or_reg.v|
 Z5 !s90 -reportprogress|300|-f|../filelist/filelist.f|
 !i113 1
@@ -39,7 +39,7 @@ R1
 w1729039602
 8../tb/tb_and_or_reg.v
 F../tb/tb_and_or_reg.v
-!i122 4
+!i122 5
 L0 2 37
 R2
 R3

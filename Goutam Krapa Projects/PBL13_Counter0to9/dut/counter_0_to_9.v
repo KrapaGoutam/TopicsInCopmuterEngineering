@@ -1,14 +1,18 @@
 module counter_0_to_9 (
-    input wire clk,        // clock signal
-    input wire rst,        // reset
-    input wire en,         // enable signal which is active when high
-    output reg [3:0] cnt,  // 4-bit counter output
-      
+    input  clk,        // clock signal
+    input  rst,        // reset
+    input  en,         // enable signal which is active when high
+    output reg [3:0] cnt  // 4-bit counter output    
 );
 
-    // MUX logic for next counter value
+// MUX logic for next counter value
     wire [3:0] nxt_cnt = (cnt == 4'h9) ? 4'h0 :  // reset counter to 4'h0 if cnt is 4'h9
                          (en ? cnt + 4'h1 : cnt);  // secondary MUX to increment if en, else hold current value
+						 
+	//or 
+	//wire [3:0] inc_cnt = en ? cnt + 4'h1 : cnt;     
+	//wire [3:0] nxt_cnt = (cnt == 4'h9) ? 4'h0 :  inc_cnt;
+    
 
     // Counter logic with reset
     always @(posedge clk, negedge rst) begin

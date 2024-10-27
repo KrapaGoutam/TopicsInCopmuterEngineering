@@ -1,44 +1,35 @@
-module tb_counter_0_to_9;
-
+module tb_counter_0_to_9();
     // Inputs
     reg clk;
     reg rst;
     reg en;
-
     // Outputs
     wire [3:0] cnt;
-    wire vld;
+
 
     // Instantiate the counter module uut=Unit Under Testing
-    counter_0_to_9 uut (
+    counter_0_to_9 u_counter_0_to_9 (
         .clk(clk),
         .rst(rst),
         .en(en),
-        .cnt(cnt),
-        .vld(vld)
+        .cnt(cnt)
     );
 
-
-    always #10 clk = ~clk;  
+//Bus Function model
+	//clock process 100 MHz
+    always #5 clk = ~clk;  
 
 
     initial begin
         // Initial state
-        clk = 1'b0;      
-        rst = 1'b0;      
-        en = 1'b0;       
-
-        //#5 rst = 1'b0;
-        #30 rst = 1'b1;  
-
-        // at a clock edge
-        @(posedge clk);
-
-
-        en = 1'b1;      
-
-
-        #300;
+		rst=1'b0; clk=1'b0; en=1'b0;
+        #10 rst=1'b1;
+		@(posedge clk) en=1'b1;
+		#150 rst=1'b0;//reset within counting
+		#30 rst=1'b1;
+		repeat(15) @(posedge clk) en=1'b0;
+		repeat(10) @(posedge clk) en=1'b1;
+		
 
         // uncomment if you want to Finish the simulation
         //$finish;
@@ -46,8 +37,8 @@ module tb_counter_0_to_9;
 
     // monitor signal behavior
     initial begin
-        $monitor("Time: %0d ns, clk: %b, rst: %b, en: %b, cnt: %0d, vld: %b", 
-                 $time, clk, rst, en, cnt, vld);
+        $monitor("Time: %0d ns, clk: %b, rst: %b, en: %b, cnt: %0d", 
+                 $time, clk, rst, en, cnt);
     end
 
 endmodule
