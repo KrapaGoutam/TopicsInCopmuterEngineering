@@ -1,0 +1,60 @@
+#!/bin/csh -f
+################################################################################
+# simulation top script for tb_seq_det_101
+# Change the modelsim directory in this file and run "do this_file.do"
+# project dir ---+---> hdl source dir
+#                +---> sim script dir
+#
+################################################################################
+
+# Check if current dir has ModelSim config file
+set has_config  [file exists modelsim.do]
+# Configure ModelSim
+if {$has_config==1} { do modelsim.do ; }
+
+echo "+====================================="
+echo "| Create Library Work soc            "
+echo "+====================================="
+vlib work
+vmap work work 
+
+echo "+====================================="
+echo "| Compile RTL Code                    "
+echo "+====================================="
+
+vlog -f ../filelist/filelist.f
+# Alternative manual compilation if filelist not available:
+#vlog -v ../dut/seq_det_101_mealy_b.v ../dut/seq_det_101_moore_b.v ../tb/tb_seq_det_101.v
+
+echo "+====================================="
+echo "| Compilation Pass                    "
+echo "| Beginning Simulation                "
+echo "+====================================="
+vsim work.tb_seq_det_101 -t 1ns
+
+# Add Waveform Signals
+echo "+====================================="
+echo "| Adding Waveform Signals             "
+echo "+====================================="
+
+# Main signals
+add wave -noupdate -format logic -radix hexadecimal tb_seq_det_101/clk
+add wave -noupdate -format logic -radix hexadecimal tb_seq_det_101/rst
+add wave -noupdate -format logic -radix binary tb_seq_det_101/x
+add wave -noupdate -format logic -radix binary -color cyan tb_seq_det_101/y_mealy
+add wave -noupdate -format logic -radix binary -color yellow tb_seq_det_101/y_moore
+
+# Internal Mealy FSM signals
+add wave -noupdate -format logic -radix hexadecimal -color blue tb_seq_det_101/mealy_fsm/cur_state
+add wave -noupdate -format logic -radix hexadecimal -color blue tb_seq_det_101/mealy_fsm/nxt_state
+
+# Internal Moore FSM signals
+add wave -noupdate -format logic -radix hexadecimal -color green tb_seq_det_101/moore_fsm/cur_state
+add wave -noupdate -format logic -radix hexadecimal -color green tb_seq_det_101/moore_fsm/nxt_state
+
+# Run simulation
+
+
+run 600ns
+
+# Available waveform colors: black, white, red, green, blue, yellow, cyan, magenta
