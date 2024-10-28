@@ -22,32 +22,26 @@ echo "+====================================="
 echo "| Complile RTL Code of soc            "
 echo "+====================================="
 
-vlog -f ../filelist/filelist.f  
-##or##vlog -v ../dut/and_or.v ../tb/tb_counter_0_to_9.v
-##vlog -v ../dut/counter_0_to_9.v ../tb/tb_counter_0_to_9.v
+#vlog -f ../filelist/filelist.f
+# Alternative manual compilation if filelist not available:
+vlog -v ../dut/seq_det_101_moore_b.v  ../tb/tb_seq_det_101_moore.v
 
 echo "+====================================="
 echo "| Compiler Pass                       "
 echo "| Being to Run Simulation             "
 echo "+====================================="
-vsim work.tb_counter_0_to_9 -t 1ns
+vsim work.tb_seq_det_101_moore -t 1ns
 
 ################## #################### mus  ####################################
-add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/clk
-add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/rst
-add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/en
-add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/u_counter_0_to_9/nxt_cnt
-add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/cnt
-
-add wave -noupdate -format logic -radix hexadecimal -color magenta tb_counter_0_to_9/u_counter_0_to_9/clk
-add wave -noupdate -format logic -radix hexadecimal -color magenta tb_counter_0_to_9/u_counter_0_to_9/rst
-add wave -noupdate -format logic -radix hexadecimal -color magenta tb_counter_0_to_9/u_counter_0_to_9/en
-add wave -noupdate -format logic -radix hexadecimal -color magenta tb_counter_0_to_9/u_counter_0_to_9/cnt
-add wave -noupdate -format logic -radix hexadecimal -color magenta tb_counter_0_to_9/u_counter_0_to_9/nxt_cnt
+add wave -noupdate -format logic -radix hexadecimal tb_seq_det_101_moore/clk
+add wave -noupdate -format logic -radix hexadecimal tb_seq_det_101_moore/rst
+add wave -noupdate -format logic -radix binary tb_seq_det_101_moore/x
+add wave -noupdate -format logic -radix binary -color yellow tb_seq_det_101_moore/y;
+add wave -noupdate -format logic -radix hexadecimal -color green tb_seq_det_101_moore/moore_fsm/cur_state
+add wave -noupdate -format logic -radix hexadecimal -color green tb_seq_det_101_moore/moore_fsm/nxt_state
 
 
-
-run 600ns
+run 200ns
 
 ##possible colors of waveform black
 #white

@@ -1,4 +1,4 @@
-module seq_det_101_mealy (
+module seq_det_101_mealy  (
     input      rst,     // Asynchronous reset
     input      clk,     // Clock signal
     input      x,       // Input signal
@@ -10,11 +10,10 @@ parameter S0 = 2'b00, S1 = 2'b01, S2 = 2'b10;
 
 reg [SIZE-1:0] cur_state; // Current state register
 reg [SIZE-1:0] nxt_state; // Next state register
-reg [31:0] state_name;    // ASCII-encoded state name for waveform display
 
 //------------------State Register -----------------
 always @ (posedge clk or negedge rst) begin
-    if (!rst)
+    if (~rst)
         cur_state <= S0;
     else
         cur_state <= nxt_state;
@@ -22,7 +21,7 @@ end
 
 //-------Next State Combinational Circuit-----------
 always @ (cur_state or x or rst) begin
-    if (!rst) begin
+    if (~rst) begin
         nxt_state <= S0;
     end else begin
         case(cur_state)
@@ -36,7 +35,7 @@ end
 
 //----------Output Combinational Circuit--------------
 always @ (cur_state or x or rst) begin
-    if (!rst) begin
+    if (~rst) begin
         y <= 0;
     end else begin
         case(cur_state)
@@ -44,16 +43,6 @@ always @ (cur_state or x or rst) begin
             default: y <= 0;
         endcase
     end
-end
-
-// State name for waveform display
-always @(*) begin
-    case (cur_state)
-        S0: state_name = "S0  ";
-        S1: state_name = "S1  ";
-        S2: state_name = "S2  ";
-        default: state_name = "UNK ";  // Unknown state
-    endcase
 end
 
 endmodule

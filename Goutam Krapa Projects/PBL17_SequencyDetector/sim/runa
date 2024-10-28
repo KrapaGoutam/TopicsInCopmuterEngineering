@@ -1,7 +1,7 @@
 #!/bin/csh -f
 ################################################################################
-# simulation top script for tb_seq_det_101
-# Change the modelsim directory in this file and run "do this_file.do"
+# Combined simulation top script by Goutam Krapa 2215855
+# Change modelsim directory in this file and run "do this_file.do"
 # project dir ---+---> hdl source dir
 #                +---> sim script dir
 #
@@ -19,42 +19,54 @@ vlib work
 vmap work work 
 
 echo "+====================================="
-echo "| Compile RTL Code                    "
+echo "| Compile RTL Code of soc            "
 echo "+====================================="
 
-vlog -f ../filelist/filelist.f
-# Alternative manual compilation if filelist not available:
-#vlog -v ../dut/seq_det_101_mealy_b.v ../dut/seq_det_101_moore_b.v ../tb/tb_seq_det_101.v
+# Compile both Mealy and Moore testbenches
+vlog -v ../dut/seq_det_101_mealy_b.v  ../tb/tb_seq_det_101_melay.v
+vlog -v ../dut/seq_det_101_moore_b.v  ../tb/tb_seq_det_101_moore.v
 
 echo "+====================================="
-echo "| Compilation Pass                    "
+echo "| Compiler Pass                      "
 echo "| Beginning Simulation                "
 echo "+====================================="
-vsim work.tb_seq_det_101 -t 1ns
 
-# Add Waveform Signals
+# Simulate Mealy testbench
+vsim work.tb_seq_det_101_melay -t 1ns
+
+# Add Waveform Signals for Mealy FSM
 echo "+====================================="
-echo "| Adding Waveform Signals             "
+echo "| Adding Waveform Signals for Mealy   "
 echo "+====================================="
+add wave -noupdate -format logic -radix hexadecimal tb_seq_det_101_melay/clk
+add wave -noupdate -format logic -radix hexadecimal tb_seq_det_101_melay/rst
+add wave -noupdate -format logic -radix binary tb_seq_det_101_melay/x
+add wave -noupdate -format logic -radix binary -color cyan tb_seq_det_101_melay/y;
+add wave -noupdate -format logic -radix hexadecimal -color blue tb_seq_det_101_melay/mealy_fsm/cur_state
+add wave -noupdate -format logic -radix hexadecimal -color blue tb_seq_det_101_melay/mealy_fsm/nxt_state
 
-# Main signals
-add wave -noupdate -format logic -radix hexadecimal tb_seq_det_101/clk
-add wave -noupdate -format logic -radix hexadecimal tb_seq_det_101/rst
-add wave -noupdate -format logic -radix binary tb_seq_det_101/x
-add wave -noupdate -format logic -radix binary -color cyan tb_seq_det_101/y_mealy
-add wave -noupdate -format logic -radix binary -color yellow tb_seq_det_101/y_moore
-
-# Internal Mealy FSM signals
-add wave -noupdate -format logic -radix hexadecimal -color blue tb_seq_det_101/mealy_fsm/cur_state
-add wave -noupdate -format logic -radix hexadecimal -color blue tb_seq_det_101/mealy_fsm/nxt_state
-add wave -noupdate -format string -radix ASCII tb_seq_det_101/mealy_fsm/state_name; # State name for Mealy FSM
-
-# Internal Moore FSM signals
-add wave -noupdate -format logic -radix hexadecimal -color green tb_seq_det_101/moore_fsm/cur_state
-add wave -noupdate -format logic -radix hexadecimal -color green tb_seq_det_101/moore_fsm/nxt_state
-add wave -noupdate -format string -radix ASCII tb_seq_det_101/moore_fsm/state_name; # State name for Moore FSM
-
-# Run simulation
+# Run simulation for Mealy
 run 600ns
 
-# Available waveform colors: black, white, red, green, blue, yellow, cyan, magenta
+# Now, run the Moore testbench
+# Note: This will keep the previous simulation window open
+vsim work.tb_seq_det_101_moore -t 1ns
+
+# Add Waveform Signals for Moore FSM
+echo "+====================================="
+echo "| Adding Waveform Signals for Moore    "
+echo "+====================================="
+add wave -noupdate -format logic -radix hexadecimal tb_seq_det_101_moore/clk
+add wave -noupdate -format logic -radix hexadecimal tb_seq_det_101_moore/rst
+add wave -noupdate -format logic -radix binary tb_seq_det_101_moore/x
+add wave -noupdate -format logic -radix binary -color yellow tb_seq_det_101_moore/y;
+add wave -noupdate -format logic -radix hexadecimal -color green tb_seq_det_101_moore/moore_fsm/cur_state
+add wave -noupdate -format logic -radix hexadecimal -color green tb_seq_det_101_moore/moore_fsm/nxt_state
+
+# Run simulation for Moore
+run 600ns
+
+# End of script
+echo "+====================================="
+echo "| Simulation Complete                 "
+echo "+====================================="

@@ -22,28 +22,23 @@ echo "+====================================="
 echo "| Complile RTL Code of soc            "
 echo "+====================================="
 
-vlog -f ../filelist/filelist.f  
-##or##vlog -v ../dut/and_or.v ../tb/tb_counter_0_to_9.v
-##vlog -v ../dut/counter_0_to_9.v ../tb/tb_counter_0_to_9.v
+#vlog -f ../filelist/filelist.f
+# Alternative manual compilation if filelist not available:
+vlog -v ../dut/seq_det_101_mealy_b.v  ../tb/tb_seq_det_101_melay.v
 
 echo "+====================================="
 echo "| Compiler Pass                       "
 echo "| Being to Run Simulation             "
 echo "+====================================="
-vsim work.tb_counter_0_to_9 -t 1ns
+vsim work.tb_seq_det_101_melay -t 1ns
 
 ################## #################### mus  ####################################
-add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/clk
-add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/rst
-add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/en
-add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/u_counter_0_to_9/nxt_cnt
-add wave -noupdate -format logic -radix hexadecimal tb_counter_0_to_9/cnt
-
-add wave -noupdate -format logic -radix hexadecimal -color magenta tb_counter_0_to_9/u_counter_0_to_9/clk
-add wave -noupdate -format logic -radix hexadecimal -color magenta tb_counter_0_to_9/u_counter_0_to_9/rst
-add wave -noupdate -format logic -radix hexadecimal -color magenta tb_counter_0_to_9/u_counter_0_to_9/en
-add wave -noupdate -format logic -radix hexadecimal -color magenta tb_counter_0_to_9/u_counter_0_to_9/cnt
-add wave -noupdate -format logic -radix hexadecimal -color magenta tb_counter_0_to_9/u_counter_0_to_9/nxt_cnt
+add wave -noupdate -format logic -radix hexadecimal tb_seq_det_101_melay/clk
+add wave -noupdate -format logic -radix hexadecimal tb_seq_det_101_melay/rst
+add wave -noupdate -format logic -radix binary tb_seq_det_101_melay/x
+add wave -noupdate -format logic -radix binary -color cyan tb_seq_det_101_melay/y;
+add wave -noupdate -format logic -radix hexadecimal -color blue tb_seq_det_101_melay/mealy_fsm/cur_state
+add wave -noupdate -format logic -radix hexadecimal -color blue tb_seq_det_101_melay/mealy_fsm/nxt_state
 
 
 

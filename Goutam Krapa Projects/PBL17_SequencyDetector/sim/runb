@@ -41,7 +41,7 @@ echo "+====================================="
 add wave -noupdate -format logic -radix hexadecimal tb_seq_det_101/clk
 add wave -noupdate -format logic -radix hexadecimal tb_seq_det_101/rst
 add wave -noupdate -format logic -radix binary tb_seq_det_101/x
-add wave -noupdate -format logic -radix binary -color cyan tb_seq_det_101/y_mealy
+add wave -noupdate -format logic -radix binary -color orange tb_seq_det_101/y_mealy
 add wave -noupdate -format logic -radix binary -color yellow tb_seq_det_101/y_moore
 
 # Internal Mealy FSM signals
