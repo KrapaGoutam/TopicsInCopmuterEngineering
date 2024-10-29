@@ -12,7 +12,7 @@ reg [SIZE-1:0] cur_state; // Current state register
 reg [SIZE-1:0] nxt_state; // Next state register
 
 //------------------State Register -----------------
-always @ (posedge clk or negedge rst) begin
+always @ (posedge clk , negedge rst) begin
     if (~rst)
         cur_state <= S0;
     else
@@ -20,7 +20,7 @@ always @ (posedge clk or negedge rst) begin
 end
 
 //-------Next State Combinational Circuit-----------
-always @ (cur_state or x or rst) begin
+always @ (cur_state , x , rst) begin
     if (~rst) begin
         nxt_state <= S0;
     end else begin
@@ -34,15 +34,35 @@ always @ (cur_state or x or rst) begin
 end
 
 //----------Output Combinational Circuit--------------
-always @ (cur_state or x or rst) begin
+
+assign y = (cur_state==S2) & x;
+
+//or
+
+/* always @ (cur_state or x or rst) begin
     if (~rst) begin
         y <= 0;
     end else begin
         case(cur_state)
             S2: y <= x; // Output 1 when transitioning from S2 to S1 with x=1 (101 detected)
-            default: y <= 0;
+            default: y <= 1'b0;
         endcase
     end
-end
+end */
+
+//or
+
+/* always @ (cur_state , x , rst) begin
+    if (~rst) begin
+        y <= 0;
+    end else begin
+        case(cur_state)
+			S0: if(x) y <= 1'b0; else y<= 1'b0;
+			S1: if(x) y <= 1'b0; else y<= 1'b0;
+            S2: if(x) y <= 1'b1; else y<= 1'b0;
+            default: y <= 1'b0;
+        endcase
+    end
+end */
 
 endmodule

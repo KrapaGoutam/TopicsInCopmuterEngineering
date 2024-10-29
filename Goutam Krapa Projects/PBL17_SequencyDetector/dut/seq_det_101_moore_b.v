@@ -12,7 +12,7 @@ reg [SIZE-1:0] cur_state; // Current state register
 reg [SIZE-1:0] nxt_state; // Next state register
 
 //------------------State Register -----------------
-always @ (posedge clk or negedge rst) begin
+always @ (posedge clk , negedge rst) begin
     if (~rst)
         cur_state <= S0;
     else
@@ -20,7 +20,7 @@ always @ (posedge clk or negedge rst) begin
 end
 
 //-------Next State Combinational Circuit-----------
-always @ (cur_state or x or rst) begin
+always @ (cur_state , x , rst) begin
     if (~rst) begin
         nxt_state <= S0;
     end else begin
@@ -35,7 +35,12 @@ always @ (cur_state or x or rst) begin
 end
 
 //----------Output Combinational Circuit--------------
-always @ (cur_state or rst) begin
+
+assign y = (cur_state==S3);
+
+//or 
+
+/* always @ (cur_state , rst) begin
     if (~rst) begin
         y <= 0;
     end else begin
@@ -44,6 +49,6 @@ always @ (cur_state or rst) begin
             default: y <= 0;
         endcase
     end
-end
+end */
 
 endmodule

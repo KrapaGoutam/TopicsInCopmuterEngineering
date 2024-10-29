@@ -32,7 +32,7 @@ module tb_seq_det_101;
 	rst=1'b0; clk=1'b0;// en=1'b0;
 	x = 0;
     #10 rst=1'b1;
-	@(posedge clk);// en=1'b1;
+	//@(posedge clk);// en=1'b1;
     // Initial state
 
 

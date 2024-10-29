@@ -42,7 +42,7 @@ add wave -noupdate -format logic -radix hexadecimal -color blue tb_seq_det_101_m
 
 
 
-run 600ns
+run 200ns
 
 ##possible colors of waveform black
 #white

@@ -10,109 +10,110 @@ z2
 cModel Technology
 Z0 dC:/Users/krapa/Documents/UHCLmasters/CENG/Topics in CEng/IC-Design/Goutam Krapa Projects/PBL17_SequencyDetector/sim
 vseq_det_101_mealy
-Z1 !s110 1730159253
+Z1 !s110 1730162543
 !i10b 1
-!s100 `G07L2Oe5Xk7:fW3G1S341
-Iel5T6LGcOHHbdl;9i=ZeM1
+!s100 9`0nLUAB_A5_4^jhe<GYT2
+I_D3YH;C`Xn[MI<^]VKD;f0
 R0
-w1730157066
+w1730161420
 8../dut/seq_det_101_melay_b.v
 F../dut/seq_det_101_melay_b.v
-!i122 19
-L0 1 48
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-Z3 OV;L;2021.1;73
+!i122 28
+Z2 L0 1 68
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 OV;L;2021.1;73
 r1
 !s85 0
 31
-Z4 !s108 1730159253.000000
-!s107 ../tb/tb_seq_det_101.v|../dut/seq_det_101_moore_b.v|../dut/seq_det_101_melay_b.v|
-Z5 !s90 -reportprogress|300|-f|../filelist/filelist.f|
+Z5 !s108 1730162543.000000
+Z6 !s107 ../tb/tb_seq_det_101.v|../dut/seq_det_101_moore_b.v|../dut/seq_det_101_melay_b.v|
+Z7 !s90 -reportprogress|300|-f|../filelist/filelist.f|
 !i113 1
-Z6 tCvgOpt 0
+Z8 tCvgOpt 0
 vseq_det_101_moore
-R1
+Z9 !s110 1730163004
 !i10b 1
-!s100 0`6zJ[EFRV0MnV@TXn<Mo1
-IZ8W`>MMbYX^Z>:CVLSLNK3
+!s100 UYCGf?L;jLSFgT8d2J7[g0
+IY4:U`6JC]gI4=L4CNN<[=2
 R0
-w1730157069
+w1730162712
 8../dut/seq_det_101_moore_b.v
 F../dut/seq_det_101_moore_b.v
-!i122 19
-L0 1 49
-R2
+!i122 31
+L0 1 54
 R3
+R4
 r1
 !s85 0
 31
-R4
-Z7 !s107 ../tb/tb_seq_det_101.v|../dut/seq_det_101_moore_b.v|../dut/seq_det_101_melay_b.v|
-R5
+Z10 !s108 1730163004.000000
+Z11 !s107 ../tb/tb_seq_det_101_moore.v|
+Z12 !s90 -reportprogress|300|-v|../dut/seq_det_101_moore_b.v|../tb/tb_seq_det_101_moore.v|
 !i113 1
-R6
+Z13 !s92 -v ../dut/seq_det_101_moore_b.v
+R8
 vtb_seq_det_101
 R1
 !i10b 1
-!s100 ]6dGEnQ6K1Mj_[:d:8FL^3
-IHo<mK8U]S_gO?TW4?@>5?1
+!s100 K[md2BnQi2;32=`_jdZG30
+In3mSz8JP[4Ohlfghjj[d=2
 R0
-w1730156026
+w1730162538
 8../tb/tb_seq_det_101.v
 F../tb/tb_seq_det_101.v
-!i122 19
-L0 1 68
+!i122 28
 R2
 R3
+R4
 r1
 !s85 0
 31
-R4
-R7
 R5
-!i113 1
 R6
+R7
+!i113 1
+R8
 vtb_seq_det_101_melay
-Z8 !s110 1730159145
+!s110 1730163197
 !i10b 1
 !s100 iDKN^C1oSW<NkSF=EoP0]2
 I8Z2?z5f0VJO44QL<4A0@P0
 R0
-w1730158553
+w1730163182
 8../tb/tb_seq_det_101_melay.v
 F../tb/tb_seq_det_101_melay.v
-!i122 16
+!i122 33
 L0 1 50
-R2
 R3
+R4
 r1
 !s85 0
 31
-Z9 !s108 1730159145.000000
+!s108 1730163197.000000
 !s107 ../tb/tb_seq_det_101_melay.v|
 !s90 -reportprogress|300|-v|../dut/seq_det_101_mealy_b.v|../tb/tb_seq_det_101_melay.v|
 !i113 1
 !s92 -v ../dut/seq_det_101_mealy_b.v
-R6
-vtb_seq_det_101_moore
 R8
+vtb_seq_det_101_moore
+R9
 !i10b 1
-!s100 l8?KB?Qh9ojmhN7:odgU80
-I0::9z4l5@IDZf2?@:[]^B3
+!s100 @:?NP0BE_XW_K8oDPlk]f2
+I:hIcC8FDhBBYYi?YI73En1
 R0
-w1730158898
+w1730163000
 8../tb/tb_seq_det_101_moore.v
 F../tb/tb_seq_det_101_moore.v
-!i122 17
+!i122 31
 L0 2 51
-R2
 R3
+R4
 r1
 !s85 0
 31
-R9
-!s107 ../tb/tb_seq_det_101_moore.v|
-!s90 -reportprogress|300|-v|../dut/seq_det_101_moore_b.v|../tb/tb_seq_det_101_moore.v|
+R10
+R11
+R12
 !i113 1
-!s92 -v ../dut/seq_det_101_moore_b.v
-R6
+R13
+R8

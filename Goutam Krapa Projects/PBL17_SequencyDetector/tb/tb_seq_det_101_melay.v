@@ -20,7 +20,7 @@ module tb_seq_det_101_melay;
     rst = 1'b0; clk = 1'b0;
     x = 0;
     #10 rst = 1'b1;
-
+	@(posedge clk);
     // Input sequence to test "101" detection
     #10 x = 0;
     #10 x = 1;
