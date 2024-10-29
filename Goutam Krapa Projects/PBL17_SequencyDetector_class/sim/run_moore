@@ -22,31 +22,28 @@ echo "+====================================="
 echo "| Complile RTL Code of soc            "
 echo "+====================================="
 
+vlog +define+MOORE\
+	-f ../filelist/filelist_moore.f
 #vlog -f ../filelist/filelist.f
 # Alternative manual compilation if filelist not available:
-vlog -v ../dut/seq_det_101_mealy_b.v  ../tb/tb_seq_det_101_melay.v
+##vlog -v ../dut/seq_det_101_moore_b.v  ../tb/tb_seq_det_101.v
 
 echo "+====================================="
 echo "| Compiler Pass                       "
 echo "| Being to Run Simulation             "
 echo "+====================================="
-vsim work.tb_seq_det_101_melay -t 1ns
+vsim work.tb_seq_det_101 -t 1ns
 
 ################## #################### mus  ####################################
-add wave -noupdate -format logic -radix hexadecimal tb_seq_det_101_melay/clk
-add wave -noupdate -format logic -radix hexadecimal tb_seq_det_101_melay/rst
-add wave -noupdate -format logic -radix binary tb_seq_det_101_melay/x
-add wave -noupdate -format logic -radix binary -color cyan tb_seq_det_101_melay/y;
-add wave -noupdate -format logic -radix hexadecimal -color blue tb_seq_det_101_melay/mealy_fsm/clk
-add wave -noupdate -format logic -radix hexadecimal -color blue tb_seq_det_101_melay/mealy_fsm/rst
-add wave -noupdate -format logic -radix hexadecimal -color blue tb_seq_det_101_melay/mealy_fsm/x
-add wave -noupdate -format logic -radix hexadecimal -color blue tb_seq_det_101_melay/mealy_fsm/y
-add wave -noupdate -format logic -radix hexadecimal -color blue tb_seq_det_101_melay/mealy_fsm/cur_state
-add wave -noupdate -format logic -radix hexadecimal -color blue tb_seq_det_101_melay/mealy_fsm/nxt_state
+add wave -noupdate tb_seq_det_101/clk
+add wave -noupdate tb_seq_det_101/rst
+add wave -noupdate tb_seq_det_101/x
+add wave -noupdate tb_seq_det_101/y;
+add wave -noupdate -color blue tb_seq_det_101/u_seq_det_101_moore/cur_state
+add wave -noupdate -color blue tb_seq_det_101/u_seq_det_101_moore/nxt_state
 
 
-
-run 200ns
+run 265ns
 
 ##possible colors of waveform black
 #white
