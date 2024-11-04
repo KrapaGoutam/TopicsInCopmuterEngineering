@@ -37,13 +37,13 @@ vsim work.tb_seq_det_101 -t 1ns
 add wave -noupdate  tb_seq_det_101/clk
 add wave -noupdate  tb_seq_det_101/rst
 add wave -noupdate  tb_seq_det_101/x
-add wave -noupdate  tb_seq_det_101/y;
+add wave -noupdate  tb_seq_det_101/y
 add wave -noupdate -color blue tb_seq_det_101/u_seq_det_101_mealy/cur_state
 add wave -noupdate -color blue tb_seq_det_101/u_seq_det_101_mealy/nxt_state
 
 
 
-run 265ns
+run 350ns
 
 ##possible colors of waveform black
 #white

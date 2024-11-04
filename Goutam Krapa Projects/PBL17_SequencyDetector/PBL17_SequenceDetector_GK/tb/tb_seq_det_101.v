@@ -32,7 +32,7 @@ module tb_seq_det_101;
 	rst=1'b0; clk=1'b0;// en=1'b0;
 	x = 0;
     #10 rst=1'b1;
-	//@(posedge clk);// en=1'b1;
+	@(posedge clk);// en=1'b1;
     // Initial state
 
 
@@ -62,7 +62,7 @@ module tb_seq_det_101;
 
   // Display signals
   initial begin
-    $monitor("Time: %0d | x: %b | y_mealy: %b | y_moore: %b | rst: %b", $time, x, y_mealy, y_moore, rst);
+    $monitor("Time: %0d | x: %b | y_mealy: %b | y_moore: %b |", $time, x, y_mealy, y_moore);
   end
 
 endmodule

@@ -38,19 +38,27 @@ echo "| Adding Waveform Signals             "
 echo "+====================================="
 
 # Main signals
-add wave -noupdate -format logic -radix hexadecimal tb_seq_det_101/clk
-add wave -noupdate -format logic -radix hexadecimal tb_seq_det_101/rst
+add wave -noupdate -format logic  tb_seq_det_101/clk
+add wave -noupdate -format logic  tb_seq_det_101/rst
 add wave -noupdate -format logic -radix binary tb_seq_det_101/x
-add wave -noupdate -format logic -radix binary -color orange tb_seq_det_101/y_mealy
-add wave -noupdate -format logic -radix binary -color yellow tb_seq_det_101/y_moore
+add wave -noupdate -format logic -radix binary -color magenta tb_seq_det_101/y_mealy
+add wave -noupdate -format logic -radix binary -color magenta tb_seq_det_101/y_moore
 
 # Internal Mealy FSM signals
-add wave -noupdate -format logic -radix hexadecimal -color blue tb_seq_det_101/mealy_fsm/cur_state
-add wave -noupdate -format logic -radix hexadecimal -color blue tb_seq_det_101/mealy_fsm/nxt_state
+add wave -noupdate -format logic -radix hexadecimal -color orange tb_seq_det_101/clk
+add wave -noupdate -format logic -radix hexadecimal -color orange tb_seq_det_101/rst
+add wave -noupdate -format logic -radix binary -color orange tb_seq_det_101/x
+add wave -noupdate -format logic -radix binary -color orange tb_seq_det_101/y_mealy
+add wave -noupdate -format logic  -color orange tb_seq_det_101/mealy_fsm/cur_state
+add wave -noupdate -format logic  -color orange tb_seq_det_101/mealy_fsm/nxt_state
 
 # Internal Moore FSM signals
-add wave -noupdate -format logic -radix hexadecimal -color green tb_seq_det_101/moore_fsm/cur_state
-add wave -noupdate -format logic -radix hexadecimal -color green tb_seq_det_101/moore_fsm/nxt_state
+add wave -noupdate -format logic  -color yellow tb_seq_det_101/clk
+add wave -noupdate -format logic  -color yellow tb_seq_det_101/rst
+add wave -noupdate -format logic -radix binary -color yellow tb_seq_det_101/x
+add wave -noupdate -format logic -radix binary -color yellow tb_seq_det_101/y_moore
+add wave -noupdate -format logic  -color yellow tb_seq_det_101/moore_fsm/cur_state
+add wave -noupdate -format logic  -color yellow tb_seq_det_101/moore_fsm/nxt_state
 
 # Run simulation
 

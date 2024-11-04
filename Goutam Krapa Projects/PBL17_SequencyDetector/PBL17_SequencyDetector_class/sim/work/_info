@@ -1,0 +1,77 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/krapa/Documents/UHCLmasters/CENG/Topics in CEng/IC-Design/Goutam Krapa Projects/PBL17_SequencyDetector_class/sim
+vseq_det_101_mealy
+Z0 !s110 1730323389
+!i10b 1
+!s100 ;4fS89b]o<aSa=`7LLkk42
+Ib7;akU6kMGj0_[4=b^]KZ3
+Z1 dC:/Users/krapa/Documents/UHCLmasters/CENG/Topics in CEng/IC-Design/Goutam Krapa Projects/PBL17_SequencyDetector/PBL17_SequencyDetector_class/sim
+w1730165735
+8../dut/seq_det_101_mealy.v
+F../dut/seq_det_101_mealy.v
+!i122 28
+L0 1 68
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 OV;L;2021.1;73
+r1
+!s85 0
+31
+Z4 !s108 1730323389.000000
+!s107 ../tb/tb_seq_det_101.v|../dut/seq_det_101_mealy.v|
+Z5 !s90 -reportprogress|300|+define+MEALY|-f|../filelist/filelist_mealy.f|
+!i113 1
+Z6 !s92 +define+MEALY
+Z7 tCvgOpt 0
+vseq_det_101_moore
+!s110 1730323314
+!i10b 1
+!s100 kdfPbF2^HzJZ52Tgb]]<J3
+I4mnaf2;fAf1;@^15DZhaX0
+R1
+w1730166902
+8../dut/seq_det_101_moore.v
+F../dut/seq_det_101_moore.v
+!i122 27
+L0 1 55
+R2
+R3
+r1
+!s85 0
+31
+!s108 1730323314.000000
+!s107 ../tb/tb_seq_det_101.v|../dut/seq_det_101_moore.v|
+!s90 -reportprogress|300|+define+MOORE|-f|../filelist/filelist_moore.f|
+!i113 1
+!s92 +define+MOORE
+R7
+vtb_seq_det_101
+R0
+!i10b 1
+!s100 SFaozH<ND>Ii_U`1RcXKi2
+IIn[Ej1G?eN>[JVMFZ1ehf0
+R1
+w1730248523
+8../tb/tb_seq_det_101.v
+F../tb/tb_seq_det_101.v
+!i122 28
+L0 1 54
+R2
+R3
+r1
+!s85 0
+31
+R4
+Z8 !s107 ../tb/tb_seq_det_101.v|../dut/seq_det_101_mealy.v|
+R5
+!i113 1
+R6
+R7
