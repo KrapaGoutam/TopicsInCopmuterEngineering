@@ -1,0 +1,72 @@
+#!/bin/csh -f
+################################################################################
+# simulation top script
+# change modelsim in this file dir and run "do this_file.do"
+# project dir ---+---> hdl source dir
+#                +---> sim script dir
+#
+################################################################################
+
+# check if current dir has modelsim config file
+set has_config  [file exists modelsim.do]
+# config modelsim 
+if {$has_config==1} { do modelsim.do  ; }
+
+echo "+====================================="
+echo "| Creat Lib Work soc                  "
+echo "+====================================="
+vlib work
+vmap work work 
+
+echo "+====================================="
+echo "| Complile RTL Code of soc            "
+echo "+====================================="
+
+vlog -f ../filelist/filelist.f 
+
+echo "+====================================="
+echo "| Compiler Pass                       "
+echo "| Being to Run Simulation             "
+echo "+====================================="
+vsim work.tb_dot_datapath -t 1ns
+
+###################################### mus  ####################################
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/clk  
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/rst  
+#add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/ready
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/x0   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/x1   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/x2   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/x3   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/x4   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/x5   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/x6   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/x7   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/y0   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/y1   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/y2   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/y3   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/y4   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/y5   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/y6   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/y7   
+#add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/vld  
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/z    
+
+#add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/cur_state    
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/p0   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/p1   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/p2   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/p3   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/p4   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/p5   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/p6   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/p7   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/s0   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/s1   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/s2   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/s3   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/s4   
+add wave -radix hexadecimal tb_dot_datapath/u_dot_datapath/s5   
+
+run 150ns                                                                            
