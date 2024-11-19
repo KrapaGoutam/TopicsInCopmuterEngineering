@@ -1,0 +1,76 @@
+#!/bin/csh -f
+################################################################################
+# simulation top script
+# change modelsim in this file dir and run "do this_file.do"
+# project dir ---+---> hdl source dir
+#                +---> sim script dir
+#
+################################################################################
+
+# check if current dir has modelsim config file
+set has_config  [file exists modelsim.do]
+# config modelsim 
+if {$has_config==1} { do modelsim.do  ; }
+
+echo "+====================================="
+echo "| Creat Lib Work soc                  "
+echo "+====================================="
+vlib work
+vmap work work 
+
+echo "+====================================="
+echo "| Complile RTL Code of soc            "
+echo "+====================================="
+vlog -f ../filelist/filelist.f  
+
+echo "+====================================="
+echo "| Compiler Pass                       "
+echo "| Being to Run Simulation             "
+echo "+====================================="
+vsim work.tb_ddot_fsmd -t 1ns
+
+###################################### mus  ####################################
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/clk  
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/rst  
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/ready
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/x0   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/x1   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/x2   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/x3   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/x4   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/x5   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/x6   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/x7   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/y0   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/y1   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/y2   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/y3   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/y4   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/y5   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/y6   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/y7 
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/vld    
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/z    
+ 
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/p0   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/p1   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/p2   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/p3   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/p4   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/p5   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/p6   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/p7   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/s0   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/s1   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/s2   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/s3   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/s4   
+add wave -radix hexadecimal tb_ddot_fsmd/u_ddot_fsmd/s5   
+add wave  tb_ddot_fsmd/u_ddot_fsmd/rdy_vld  
+add wave  tb_ddot_fsmd/u_ddot_fsmd/rdy_vld[0] 
+add wave  tb_ddot_fsmd/u_ddot_fsmd/rdy_vld[1]  
+add wave  tb_ddot_fsmd/u_ddot_fsmd/rdy_vld[2] 
+add wave  tb_ddot_fsmd/u_ddot_fsmd/rdy_vld[3]  
+
+run 150ns
+##run 1us                                                                            
