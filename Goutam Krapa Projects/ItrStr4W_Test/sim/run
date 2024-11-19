@@ -30,40 +30,93 @@ echo "+====================================="
 vsim work.tb_basic_ddot -t 1ns
 
 ###################################### mus  ####################################
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/clk  
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/rst  
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/ready
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/x0   
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/x1   
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/x2      
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/y0   
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/y1   
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/y2   
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/y3
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/vld
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/op_z        
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/z   
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/cnt 
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/en
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/rdy_vld
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/rdy_vld[0]
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/rdy_vld[1]
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/rdy_vld[2]
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/rdy_vld[3]
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/rdy_vld[4]
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/rdy_vld[5]
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/rdy_vld[6]
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/p0   
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/p1   
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/p2   
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/p3     
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/s0   
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/s1   
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/s2 
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/s2_d_flag
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/nxt_s2_d
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/s2_d
-add wave -radix hexadecimal tb_basic_ddot/u_basic_ddot/s3   
+add wave -radix hexadecimal tb_basic_ddot/clk  
+add wave -radix hexadecimal tb_basic_ddot/rst  
+add wave -radix hexadecimal tb_basic_ddot/ready
+add wave -radix hexadecimal tb_basic_ddot/x0   
+add wave -radix hexadecimal tb_basic_ddot/x1   
+add wave -radix hexadecimal tb_basic_ddot/x2      
+add wave -radix hexadecimal tb_basic_ddot/y0   
+add wave -radix hexadecimal tb_basic_ddot/y1   
+add wave -radix hexadecimal tb_basic_ddot/y2   
+add wave -radix hexadecimal tb_basic_ddot/y3
+add wave -radix hexadecimal tb_basic_ddot/vld
+add wave -radix hexadecimal tb_basic_ddot/z
+
+############### all signal = internal signals ################################
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/clk  
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/rst  
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/ready
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/x0   
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/x1   
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/x2      
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/y0   
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/y1   
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/y2   
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/y3
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/p0_op
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/p1_op
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/p2_op
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/p3_op
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/rdy_vld[46]
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/p0_reg
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/p1_reg
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/p2_reg
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/p3_reg
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/s0_op
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/s1_op
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/rdy_vld[32]
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/s0_reg
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/s1_reg
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/s2_op
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/rdy_vld[18]
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/s2_reg
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/s2_d_flag
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/nxt_s2_d
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/s2_d
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/s3
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/z_op  
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/rdy_vld[16]
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/en
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/cnt 
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/vld
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/z
+add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/rdy_vld
+
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/clk  
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/rst  
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/ready
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/x0   
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/x1   
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/x2      
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/y0   
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/y1   
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/y2   
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/y3
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/vld
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/op_z        
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/z   
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/cnt 
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/en
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/rdy_vld
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/rdy_vld[0]
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/rdy_vld[1]
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/rdy_vld[2]
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/rdy_vld[3]
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/rdy_vld[4]
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/rdy_vld[5]
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/rdy_vld[6]
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/p0   
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/p1   
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/p2   
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/p3     
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/s0   
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/s1   
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/s2 
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/s2_d_flag
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/nxt_s2_d
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/s2_d
+# add wave -radix hexadecimal -color magenta tb_basic_ddot/u_basic_ddot/s3     
  
 
-run 300ns                                                                            
+run 1170ns                                                                            
